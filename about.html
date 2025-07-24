@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mama Zaza's Cookies</title>
+  <!-- Theme Color (Mobile Browser Styling) -->
+  <meta name="theme-color" content="#b85b7a" />
+
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="Mama Zaza's Cookies" />
+  <meta property="og:description"
+    content="Handmade cookies crafted with love from the heart of Nairobi. Discover seasonal flavors and bake-fresh magic!" />
+  <meta property="og:image" content="https://sandyabdullahi.github.io/mama_zazas/images/preview.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sandyabdullahi.github.io/mama_zazas/" />
+
+  <!-- Twitter Card Tags (Optional but Recommended) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mama Zaza's Cookies" />
+  <meta name="twitter:description" content="Get a taste of nostalgic joy. Nairobi's favorite handmade cookies!" />
+  <meta name="twitter:image" content="https://sandyabdullahi.github.io/mama_zazas/images/preview.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Nunito&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lilita+One&display=swap"
+    rel="stylesheet">
+  <style>
+    .libre-baskerville-regular-italic {
+      font-family: "Libre Baskerville", serif;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+  </style>
+</head>
+
+<body class="bg-[#fdfbf4] text-gray-800 scroll-smooth">
+
+  <!-- 🧭 Navbar -->
+  <nav class="bg-[#fffdf9] border-b border-[#fce8ee] fixed top-0 inset-x-0 z-30 backdrop-blur-md shadow-sm">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-3">
+      <!-- Logo and Title -->
+      <a href="#" class="flex items-center space-x-2">
+        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="200" height="200"
+          fill="none">
+          <circle cx="32" cy="32" r="30" fill="#D9A066" stroke="#8B5E3C" stroke-width="4" />
+
+          <!-- Bite marks -->
+          <path
+            d="M54 20c-2-2-1-5-3-7-2-2-4 1-6-2-1-1-1-3-3-3-2-1-5 3-7 3s-4-2-6-1c-2 2 1 5 0 6s-4-1-6 1c-2 1-2 5-1 6 1 2 3 1 4 3 1 2-1 4-1 6 0 2 3 4 5 3 1-1 1-3 3-2 2 0 3 2 4 4 1 2 5 2 7 1 2-1 2-4 4-5 2-1 4 1 5 0 2-1 3-4 2-6-1-2-3-1-4-3z"
+            fill="#FFF6ED" />
+
+          <!-- Chocolate chips -->
+          <circle cx="22" cy="22" r="2" fill="#4E342E" />
+          <circle cx="40" cy="18" r="2.2" fill="#4E342E" />
+          <circle cx="30" cy="32" r="2" fill="#4E342E" />
+          <circle cx="24" cy="40" r="2" fill="#4E342E" />
+          <circle cx="38" cy="42" r="2" fill="#4E342E" />
+          <circle cx="44" cy="30" r="1.8" fill="#4E342E" />
+        </svg>
+
+        <span class="text-2xl font-bold text-[#b85b7a] libre-baskerville-regular-italic">Mama Zaza's</span>
+      </a>
+
+      <!-- Hamburger Toggle -->
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#b85b7a] rounded-md md:hidden hover:bg-[#fce8ee] focus:outline-none focus:ring-2 focus:ring-[#b85b7a]"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Toggle menu</span>
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+
+      <!-- Nav Links -->
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 mt-4 rounded-lg bg-[#fdf6f7] md:flex-row md:space-x-8 md:mt-0 md:p-0 md:bg-transparent">
+          <li><a href="index.html" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">Home</a></li>
+          <li><a href="about.html" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">About</a></li>
+          <li><a href="#gallery" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">Gallery</a></li>
+          <li><a href="#contact" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">Contact</a></li>
+          <li>
+            <a href="#order"
+              class="block py-2 px-4 bg-[#b85b7a] text-white rounded-full text-sm font-semibold hover:bg-[#a64c6a] transition md:mt-0 md:inline-block">
+              Order Now
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- 📄 About Page -->
+<main class="bg-[#fffdf9] text-[#333] font-sans">
+
+  <!-- 🏷️ Page Header -->
+  <section class="text-center py-20 px-6">
+    <h1 class="text-5xl sm:text-6xl font-bold text-[#9a3152] mb-6">About Mama Zaza</h1>
+    <p class="text-lg text-gray-700 max-w-2xl mx-auto">Handcrafted cookies with a Nairobi soul. From the aroma of the oven to the surprise in each flavor—this is where nostalgia meets indulgence.</p>
+  </section>
+
+  <!-- 📍 Origins -->
+  <section class="py-16 px-6 bg-[#fce8ee]/40">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <img src="images/about-oven.jpg" alt="Mama Zaza's oven" class="rounded-xl shadow-lg" />
+      <div>
+        <h2 class="text-3xl font-semibold text-[#b85b7a] mb-4">Born in Nairobi</h2>
+        <p class="text-gray-700 text-lg mb-4">Mama Zaza began in a tiny kitchen in Ngara, with handwritten recipes passed down through generations. Our cookies aren’t just sweets—they’re moments. Each batch is mixed by hand, baked in small quantities, and infused with local love.</p>
+        <p class="text-gray-700">Whether you're grabbing a weekly flavor or sending a dozen to your cousin in Kileleshwa, you’re part of a story that started with one oven and a whole lot of heart.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✨ Philosophy -->
+  <section class="py-20 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-semibold text-[#9a3152] mb-4">Our Cookie Philosophy</h2>
+      <p class="text-gray-700 text-lg mb-6">We believe in rotating weekly flavors so no cookie lover gets bored. We balance nostalgia with bold twists—think Red Velvet meets Coconut Chai or Lemon Crinkle with Nairobi Vanilla.</p>
+      <div class="flex justify-center gap-4 flex-wrap mt-6 text-sm text-white">
+        <span class="bg-[#b85b7a] px-4 py-2 rounded-full">Locally Sourced</span>
+        <span class="bg-[#9a3152] px-4 py-2 rounded-full">Small Batch</span>
+        <span class="bg-[#b85b7a] px-4 py-2 rounded-full">Weekly Rotations</span>
+        <span class="bg-[#9a3152] px-4 py-2 rounded-full">Crafted with Joy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧑‍🍳 Behind the Oven -->
+  <section class="py-20 px-6 bg-[#fce8ee]/30">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl font-semibold text-[#b85b7a] mb-4">Meet the Bakers</h2>
+        <p class="text-gray-700 text-lg mb-4">Mama Zaza herself still crafts the base doughs—and our baking crew tests every new flavor before launch. Each cookie is baked in-house, cooled to perfection, and wrapped with our signature pink paper twine.</p>
+        <p class="text-gray-700">No machines. No shortcuts. Just good old-fashioned cookie love.</p>
+      </div>
+      <img src="images/zaza-team.jpg" alt="Baking team" class="rounded-xl shadow-lg" />
+    </div>
+  </section>
+
+  <!-- 📸 Visual Showcase -->
+  <section class="py-20 px-6 text-center">
+    <img src="images/about-group.jpg" alt="Team photo or cookie collage" class="rounded-xl shadow-xl mx-auto max-w-4xl" />
+    <p class="text-gray-700 mt-6 text-lg">From our mixer to your mouth—the journey is short, sweet, and unforgettable.</p>
+  </section>
+
+  <!-- 💬 CTA Section -->
+  <section class="py-20 px-6 bg-[#9a3152] text-white text-center">
+    <h2 class="text-4xl font-bold mb-4">Want to taste the love?</h2>
+    <p class="text-lg mb-8">Order your weekly box or browse what’s fresh out of the oven.</p>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="#order" class="bg-white text-[#b85b7a] px-6 py-3 rounded-full font-semibold hover:bg-[#fce8ee] transition">Order Cookies</a>
+      <a href="#menu" class="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-[#9a3152] transition">See This Week’s Menu</a>
+    </div>
+  </section>
+
+</main>
+
+      <script src="https://cdn.jsdelivr.net/npm/flowbite@latest/dist/flowbite.min.js"></script>
+</body>
+</html>
