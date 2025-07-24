@@ -311,7 +311,10 @@
 
       <div class="relative">
         <!-- Carousel Container -->
-        <div id="carouselTrack" class="flex overflow-x-auto gap-6 px-4 py-4 scroll-smooth snap-x scrollbar-hide">
+<div id="carouselTrack" 
+  class="flex overflow-x-auto scroll-smooth snap-x gap-6 px-4 py-4 scrollbar-hide"
+  style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+
 
           <!-- Card: Strawberry Bliss -->
           <div
@@ -513,24 +516,27 @@
         });
       });
     });
-    const track = document.getElementById("carouselTrack");
-    const prevBtn = document.getElementById("carouselPrev");
-    const nextBtn = document.getElementById("carouselNext");
-    const cardWidth = 280; // Adjust based on card width + margin
 
-    prevBtn.addEventListener("click", () => {
-      track.scrollBy({
-        left: -cardWidth,
-        behavior: "smooth"
-      });
-    });
+ const track = document.getElementById("carouselTrack");
+  const prevBtn = document.getElementById("carouselPrev");
+  const nextBtn = document.getElementById("carouselNext");
 
-    nextBtn.addEventListener("click", () => {
-      track.scrollBy({
-        left: cardWidth,
-        behavior: "smooth"
-      });
+  const scrollAmount = window.innerWidth < 640 ? 300 : 280; // More distance on mobile
+
+  prevBtn.addEventListener("click", () => {
+    track.scrollBy({
+      left: -scrollAmount,
+      behavior: "smooth"
     });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    track.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth"
+    });
+  });
+
 
     // // 🍭 Optional autoplay every 5 seconds
     // let autoScroll = setInterval(() => {
