@@ -33,6 +33,17 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 
@@ -40,14 +51,23 @@
 
   <!-- 🧭 Navbar -->
   <header
-    class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md px-6 py-4 flex justify-between items-center">
+    class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md px-6 py-4 flex items-center justify-between">
     <div class="text-xl font-bold text-[#b85b7a]">Mama Zaza's</div>
-    <nav class="space-x-6 text-sm text-gray-800">
+
+    <!-- Hamburger Button (mobile only) -->
+    <button id="menuToggle" class="sm:hidden text-[#b85b7a] focus:outline-none text-2xl">
+      ☰
+    </button>
+
+    <!-- Nav Menu -->
+    <nav id="navMenu"
+      class="hidden flex-col sm:flex sm:flex-row sm:space-x-6 text-sm text-gray-800 absolute sm:static top-full left-0 w-full sm:w-auto bg-[#fffdf9] sm:bg-transparent px-6 py-4 sm:py-0 sm:px-0 justify-center gap-4 sm:gap-0">
       <a href="#menu" class="hover:text-[#b85b7a]">Menu</a>
       <a href="#about" class="hover:text-[#b85b7a]">About</a>
       <a href="#contact" class="hover:text-[#b85b7a]">Contact</a>
     </nav>
   </header>
+
 
   <!-- 🌊 Hero & Menu -->
   <div class="bg-watercolor">
@@ -79,12 +99,18 @@
 
     <!-- 🔍 Filters -->
     <section class="flex flex-col items-center justify-center mb-8 px-4">
-      <input type="text" placeholder="Search cookies..."
+      <input type="text" id="cookieSearch" placeholder="Search cookies..."
         class="w-full max-w-md px-4 py-2 rounded-full border border-[#b85b7a] placeholder:text-gray-500 focus:outline-none" />
-      <div class="mt-4 flex gap-2 flex-wrap text-sm">
-        <span class="bg-[#fce8ee] px-3 py-1 rounded-full">Gluten-Free</span>
-        <span class="bg-[#fce8ee] px-3 py-1 rounded-full">Chocolate</span>
-        <span class="bg-[#fce8ee] px-3 py-1 rounded-full">Seasonal</span>
+
+      <div class="mt-4 flex gap-2 flex-wrap text-sm" id="tagFilters">
+        <button class="bg-[#fce8ee] text-[#9a3152] px-3 py-1 rounded-full hover:bg-[#fbd0dc]"
+          data-tag="All">All</button>
+        <button class="bg-[#fce8ee] text-[#9a3152] px-3 py-1 rounded-full hover:bg-[#fbd0dc]"
+          data-tag="Gluten-Free">Gluten-Free</button>
+        <button class="bg-[#fce8ee] text-[#9a3152] px-3 py-1 rounded-full hover:bg-[#fbd0dc]"
+          data-tag="Chocolate">Chocolate</button>
+        <button class="bg-[#fce8ee] text-[#9a3152] px-3 py-1 rounded-full hover:bg-[#fbd0dc]"
+          data-tag="Seasonal">Seasonal</button>
       </div>
     </section>
 
@@ -94,89 +120,111 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
 
         <!-- Chocolate Chip -->
-        <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition group">
+        <div class="cookie-card bg-white rounded-xl shadow-md p-5 hover:scale-105 transition"
+          data-tags="Classic,Best Seller,Chocolate">
           <img src="images/cookie1.png" alt="Chocolate Chip" class="rounded-full w-32 mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-[#b85b7a]">Chocolate Chip</h3>
           <p class="text-sm text-gray-600 mt-2">Chewy and golden, filled with melty chocolate chunks.</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
+          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 250</p>
+          <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
             <span class="bg-[#9a3152] px-3 py-1 rounded-full">Classic</span>
             <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Best Seller</span>
           </div>
         </div>
 
         <!-- Red Velvet -->
-        <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition group">
+        <div class="cookie-card bg-white rounded-xl shadow-md p-5 hover:scale-105 transition"
+          data-tags="Decadent,Seasonal,Chocolate">
           <img src="images/cookie2.png" alt="Red Velvet" class="rounded-full w-32 mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-[#b85b7a]">Red Velvet</h3>
-          <p class="text-sm text-gray-600 mt-2">Rich red cocoa base swirled with smooth cream cheese frosting.</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
+          <p class="text-sm text-gray-600 mt-2">Rich cocoa base with a cream cheese swirl.</p>
+          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 300</p>
+          <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
             <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Decadent</span>
+            <span class="bg-[#9a3152] px-3 py-1 rounded-full">Seasonal</span>
           </div>
         </div>
 
         <!-- Oatmeal Raisin -->
-        <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition group">
+        <div class="cookie-card bg-white rounded-xl shadow-md p-5 hover:scale-105 transition"
+          data-tags="Nut-Free,Homestyle,Gluten-Free">
           <img src="images/cookie3.png" alt="Oatmeal Raisin" class="rounded-full w-32 mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-[#b85b7a]">Oatmeal Raisin</h3>
-          <p class="text-sm text-gray-600 mt-2">Soft-baked with hearty oats and sweet juicy raisins.</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
+          <p class="text-sm text-gray-600 mt-2">Soft-baked oats and sweet raisins.</p>
+          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 220</p>
+          <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
             <span class="bg-[#9a3152] px-3 py-1 rounded-full">Nut-Free</span>
             <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Homestyle</span>
+            <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Gluten-Free</span>
           </div>
         </div>
 
         <!-- Snickerdoodle -->
-        <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition group">
+        <div class="cookie-card bg-white rounded-xl shadow-md p-5 hover:scale-105 transition"
+          data-tags="Spiced,Staff Favorite">
           <img src="images/cookie4.png" alt="Snickerdoodle" class="rounded-full w-32 mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-[#b85b7a]">Snickerdoodle</h3>
-          <p class="text-sm text-gray-600 mt-2">Warm cinnamon-sugar coating on a fluffy vanilla cookie base.</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
+          <p class="text-sm text-gray-600 mt-2">Cinnamon-sugar coating on vanilla cookie base.</p>
+          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 260</p>
+          <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
             <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Spiced</span>
             <span class="bg-[#9a3152] px-3 py-1 rounded-full">Staff Favorite</span>
           </div>
         </div>
 
         <!-- Peanut Butter -->
-        <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition group">
+        <div class="cookie-card bg-white rounded-xl shadow-md p-5 hover:scale-105 transition"
+          data-tags="Nutty,High Protein">
           <img src="images/cookie5.png" alt="Peanut Butter" class="rounded-full w-32 mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-[#b85b7a]">Peanut Butter</h3>
           <p class="text-sm text-gray-600 mt-2">Creamy, nutty, melt-in-your-mouth perfection.</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
+          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 240</p>
+          <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
             <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Nutty</span>
             <span class="bg-[#9a3152] px-3 py-1 rounded-full">High Protein</span>
           </div>
         </div>
 
         <!-- Double Chocolate -->
-        <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition group">
+        <div class="cookie-card bg-white rounded-xl shadow-md p-5 hover:scale-105 transition"
+          data-tags="Rich,Chocolate,Chocolate Lovers">
           <img src="images/cookie6.png" alt="Double Chocolate" class="rounded-full w-32 mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-[#b85b7a]">Double Chocolate</h3>
-          <p class="text-sm text-gray-600 mt-2">Dark cocoa dough with extra chocolate chunks inside and out.</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
+          <p class="text-sm text-gray-600 mt-2">Dark cocoa dough with double the chocolate chunks.</p>
+          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 280</p>
+          <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
             <span class="bg-[#9a3152] px-3 py-1 rounded-full">Rich</span>
             <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Chocolate Lovers</span>
           </div>
         </div>
 
         <!-- Lemon Crinkle -->
-        <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition group">
+        <div class="cookie-card bg-white rounded-xl shadow-md p-5 hover:scale-105 transition"
+          data-tags="Citrus,Seasonal,Gluten-Free">
           <img src="images/cookie7.png" alt="Lemon Crinkle" class="rounded-full w-32 mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-[#b85b7a]">Lemon Crinkle</h3>
-          <p class="text-sm text-gray-600 mt-2">Zesty lemon flavor dusted with powdered sugar and crackled tops.</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
+          <p class="text-sm text-gray-600 mt-2">Zesty lemon flavor with powdered sugar crackle.</p>
+          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 230</p>
+          <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
             <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Citrus</span>
-            <span class="bg-[#9a3152] px-3 py-1 rounded-full">Bright</span>
+            <span class="bg-[#9a3152] px-3 py-1 rounded-full">Seasonal</span>
+            <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Gluten-Free</span>
           </div>
         </div>
 
+
+
         <!-- Cookies & Cream -->
-        <div class="bg-white rounded-xl shadow-md p-5 hover:scale-105 transition group">
+        <div class="cookie-card bg-white rounded-xl shadow-md p-5 hover:scale-105 transition"
+          data-tags="Popular,Crumbly,Gluten-Free">
           <img src="images/cookie8.png" alt="Cookies & Cream" class="rounded-full w-32 mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-[#b85b7a]">Cookies & Cream</h3>
-          <p class="text-sm text-gray-600 mt-2">Vanilla cream base swirled with crushed chocolate sandwich cookies.</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
+          <p class="text-sm text-gray-600 mt-2">Vanilla cream cookie swirled with crushed sandwich cookies.</p>
+          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 270</p>
+          <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
             <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Popular</span>
             <span class="bg-[#9a3152] px-3 py-1 rounded-full">Crumbly</span>
+            <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Gluten-Free</span>
           </div>
         </div>
 
@@ -191,26 +239,7 @@
           <h3 class="font-semibold text-[#b85b7a] mb-2">Strawberry Bliss</h3>
           <p class="text-sm text-gray-600">Tangy strawberry cookie with white chocolate drizzle.</p>
         </div>
-        <div class="min-w-[220px] bg-white p-4 rounded-lg shadow-md">
-          <h3 class="font-semibold text-[#b85b7a] mb-2">Caramel Crumble</h3>
-          <p class="text-sm text-gray-600">Buttery cookie topped with caramel & crumbs.</p>
-        </div>
-        <div class="min-w-[220px] bg-white p-4 rounded-lg shadow-md">
-          <h3 class="font-semibold text-[#b85b7a] mb-2">Caramel Crumble</h3>
-          <p class="text-sm text-gray-600">Buttery cookie topped with caramel & crumbs.</p>
-        </div>
-        <div class="min-w-[220px] bg-white p-4 rounded-lg shadow-md">
-          <h3 class="font-semibold text-[#b85b7a] mb-2">Caramel Crumble</h3>
-          <p class="text-sm text-gray-600">Buttery cookie topped with caramel & crumbs.</p>
-        </div>
-        <div class="min-w-[220px] bg-white p-4 rounded-lg shadow-md">
-          <h3 class="font-semibold text-[#b85b7a] mb-2">Caramel Crumble</h3>
-          <p class="text-sm text-gray-600">Buttery cookie topped with caramel & crumbs.</p>
-        </div>
-        <div class="min-w-[220px] bg-white p-4 rounded-lg shadow-md">
-          <h3 class="font-semibold text-[#b85b7a] mb-2">Caramel Crumble</h3>
-          <p class="text-sm text-gray-600">Buttery cookie topped with caramel & crumbs.</p>
-        </div>
+
       </div>
     </section>
 
@@ -266,6 +295,44 @@
       <a href="#" class="hover:text-[#b85b7a]">TikTok</a>
     </div>
   </footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+
+
+
+    const searchInput = document.getElementById("cookieSearch");
+    const tagButtons = document.querySelectorAll("#tagFilters button");
+    const cards = document.querySelectorAll(".cookie-card");
+
+    // Text search filter
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? "block" : "none";
+      });
+    });
+
+    // Tag click filter
+    tagButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const selectedTag = btn.dataset.tag;
+        cards.forEach(card => {
+          const tags = card.dataset.tags;
+          if (selectedTag === "All") {
+            card.style.display = "block";
+          } else {
+            card.style.display = tags.includes(selectedTag) ? "block" : "none";
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 
