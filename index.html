@@ -21,8 +21,7 @@
     .bg-watercolor {
       background-image: url('images/rsz_11bg-watercolor.png');
       background-repeat: no-repeat;
-      background-size: cover;
-      background-position: top center;
+
     }
 
     .scrollbar-hide::-webkit-scrollbar {
@@ -78,7 +77,7 @@
 
 
   <!-- 🌊 Hero & Menu -->
-  <div class="bg-watercolor">
+  <div class="bg-watercolor bg-cover bg-center">
 
     <!-- 🎉 Promo -->
     <div class="w-full text-center py-2 bg-[#b85b7a]/90 text-white text-sm font-medium mt-16">
@@ -239,59 +238,69 @@
       </div>
     </section>
 
-    <!-- 🎞️ Flavor Carousel -->
-    <section class="text-center py-20 px-6 bg-[#fffdf9]">
-      <h2 class="text-3xl font-semibold text-[#9a3152] mb-8">Featured Rotating Flavors</h2>
+<!-- 🎞️ Rotating Flavors Carousel -->
+<section class="text-center py-20 px-6 bg-[#fffdf9]">
+  <h2 class="text-3xl font-semibold text-[#9a3152] mb-8">Featured Rotating Flavors</h2>
 
-      <div class="flex overflow-x-auto gap-6 px-4 py-4 scroll-snap-x scroll-smooth scrollbar-hide">
-
-        <!-- Strawberry Bliss -->
-        <div
-          class="min-w-[260px] bg-white rounded-xl shadow-md p-5 snap-start flex-shrink-0 hover:scale-105 transition">
-          <img src="images/strawberry-bliss.png" alt="Strawberry Bliss" class="w-24 mx-auto mb-4 rounded-full" />
-          <h3 class="text-lg font-semibold text-[#b85b7a] mb-1">Strawberry Bliss</h3>
-          <p class="text-sm text-gray-600">Tangy strawberry cookie with white chocolate drizzle.</p>
-          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 290</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
-            <span class="bg-[#9a3152] px-3 py-1 rounded-full">Seasonal</span>
-            <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Fruity</span>
-          </div>
+  <div class="relative">
+    <!-- Carousel Container -->
+    <div id="carouselTrack" class="flex overflow-x-auto gap-6 px-4 py-4 scroll-smooth snap-x scrollbar-hide">
+      
+      <!-- Card: Strawberry Bliss -->
+      <div class="min-w-full sm:min-w-[260px] bg-white rounded-xl shadow-md p-5 snap-start flex-shrink-0 hover:scale-[1.02] transition">
+        <img src="images/strawberry-bliss.png" alt="Strawberry Bliss" class="w-24 mx-auto mb-4 rounded-full" />
+        <h3 class="text-lg font-semibold text-[#b85b7a] mb-1">Strawberry Bliss</h3>
+        <p class="text-sm text-gray-600">Tangy strawberry cookie with <br />white chocolate drizzle.</p>
+        <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 290</p>
+        <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
+          <span class="bg-[#9a3152] px-3 py-1 rounded-full">Seasonal</span>
+          <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Fruity</span>
         </div>
-
-        <!-- Caramel Crumble -->
-        <div
-          class="min-w-[260px] bg-white rounded-xl shadow-md p-5 snap-start flex-shrink-0 hover:scale-105 transition">
-          <img src="images/caramel-crumble.png" alt="Caramel Crumble" class="w-24 mx-auto mb-4 rounded-full" />
-          <h3 class="text-lg font-semibold text-[#b85b7a] mb-1">Caramel Crumble</h3>
-          <p class="text-sm text-gray-600">Buttery cookie topped with gooey caramel and golden crumbs.</p>
-          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 310</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
-            <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Decadent</span>
-            <span class="bg-[#9a3152] px-3 py-1 rounded-full">Limited</span>
-          </div>
-        </div>
-
-        <!-- Pistachio Swirl -->
-        <div
-          class="min-w-[260px] bg-white rounded-xl shadow-md p-5 snap-start flex-shrink-0 hover:scale-105 transition">
-          <img src="images/pistachio-swirl.png" alt="Pistachio Swirl" class="w-24 mx-auto mb-4 rounded-full" />
-          <h3 class="text-lg font-semibold text-[#b85b7a] mb-1">Pistachio Swirl</h3>
-          <p class="text-sm text-gray-600">Soft cookie infused with pistachio and white chocolate marbling.</p>
-          <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 300</p>
-          <div class="mt-3 flex justify-center gap-2 text-xs text-white">
-            <span class="bg-[#9a3152] px-3 py-1 rounded-full">Nutty</span>
-            <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Gluten-Free</span>
-          </div>
-        </div>
-
       </div>
-    </section>
+
+      <!-- Card: Caramel Crumble -->
+      <div class="min-w-full sm:min-w-[260px] bg-white rounded-xl shadow-md p-5 snap-start flex-shrink-0 hover:scale-[1.02] transition">
+        <img src="images/caramel-crumble.png" alt="Caramel Crumble" class="w-24 mx-auto mb-4 rounded-full" />
+        <h3 class="text-lg font-semibold text-[#b85b7a] mb-1">Caramel Crumble</h3>
+        <p class="text-sm text-gray-600">Buttery cookie topped with gooey <br />caramel and golden crumbs.</p>
+        <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 310</p>
+        <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
+          <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Decadent</span>
+          <span class="bg-[#9a3152] px-3 py-1 rounded-full">Limited</span>
+        </div>
+      </div>
+
+      <!-- Card: Pistachio Swirl -->
+      <div class="min-w-full sm:min-w-[260px] bg-white rounded-xl shadow-md p-5 snap-start flex-shrink-0 hover:scale-[1.02] transition">
+        <img src="images/pistachio-swirl.png" alt="Pistachio Swirl" class="w-24 mx-auto mb-4 rounded-full" />
+        <h3 class="text-lg font-semibold text-[#b85b7a] mb-1">Pistachio Swirl</h3>
+        <p class="text-sm text-gray-600">Soft cookie infused with pistachio and <br />white chocolate marbling.</p>
+        <p class="text-sm font-semibold text-[#9a3152] mt-2">KSh 300</p>
+        <div class="mt-3 flex justify-center gap-2 flex-wrap text-xs text-white">
+          <span class="bg-[#9a3152] px-3 py-1 rounded-full">Nutty</span>
+          <span class="bg-[#b85b7a] px-3 py-1 rounded-full">Gluten-Free</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⬅️ Previous Arrow -->
+    <button id="carouselPrev" class="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow text-[#b85b7a] px-3 py-2 hover:bg-[#fce8ee] transition">
+      ◀
+    </button>
+
+    <!-- ➡️ Next Arrow -->
+    <button id="carouselNext" class="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow text-[#b85b7a] px-3 py-2 hover:bg-[#fce8ee] transition">
+      ▶
+    </button>
+  </div>
+</section>
 
     <!-- 📍 Delivery Map -->
     <section class="py-20 px-6 text-center">
       <h2 class="text-3xl font-semibold text-[#9a3152] mb-6">Delivery Areas</h2>
       <p class="text-gray-700 mb-4">We currently deliver across Nairobi. More areas coming soon!</p>
-      <img src="/images/nairobi-map.png" alt="Delivery Map" class="mx-auto rounded-md shadow-md w-full max-w-xl" />
+      <!-- <img src="/images/nairobi-map.png" alt="Delivery Map"  /> -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.663579221959!2d36.82378379041455!3d-1.2741639948548413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f16d6e5430f77%3A0x4d51c5efd1d773ee!2sNgara%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1753359121811!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mx-auto rounded-md shadow-md w-full max-w-xl"></iframe>
     </section>
 
     <!-- 💌 Newsletter -->
@@ -376,6 +385,25 @@
         });
       });
     });
+    const track = document.getElementById("carouselTrack");
+  const prevBtn = document.getElementById("carouselPrev");
+  const nextBtn = document.getElementById("carouselNext");
+  const cardWidth = 280; // Adjust based on card width + margin
+
+  prevBtn.addEventListener("click", () => {
+    track.scrollBy({ left: -cardWidth, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    track.scrollBy({ left: cardWidth, behavior: "smooth" });
+  });
+
+  // 🍭 Optional autoplay every 5 seconds
+  let autoScroll = setInterval(() => {
+    track.scrollBy({ left: cardWidth, behavior: "smooth" });
+  }, 5000);
+
+
   </script>
 
 </body>
