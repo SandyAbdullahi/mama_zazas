@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mama Zaza's Cookies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Nunito&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Nunito', sans-serif;
+      }
+      h1, h2 {
+        font-family: 'Playfair Display', serif;
+      }
+      .bg-watercolor {
+        background-image: url('/images/rsz_11bg-watercolor.png'); /* Replace with your actual image path */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+
+    <!-- Meta for social sharing -->
+    <meta property="og:title" content="Mama Zaza's Cookies" />
+    <meta property="og:description" content="Cookies made with love, delivered from the heart of Nairobi." />
+    <meta property="og:image" content="/images/og-preview.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com" />
+  </head>
+
+  <body class="bg-[#fffdf9] text-gray-800">
+
+    <!-- Navbar -->
+    <header class="absolute w-full top-0 left-0 px-6 py-4 z-10 flex justify-between items-center">
+      <div class="text-xl font-semibold text-[#b85b7a]">Mama Zaza's</div>
+      <nav class="space-x-6 text-sm text-gray-700">
+        <a href="#menu" class="hover:text-[#b85b7a]">Menu</a>
+        <a href="#about" class="hover:text-[#b85b7a]">About</a>
+        <a href="#contact" class="hover:text-[#b85b7a]">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero + Menu Background -->
+    <div class="bg-watercolor bg-cover bg-no-repeat bg-top">
+
+      <!-- Hero Section -->
+      <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-12">
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-[#9a3152] mb-10 leading-snug">
+          Cookies made with love,<br />delivered from the heart of Nairobi
+        </h1>
+        <div class="flex justify-center gap-6 text-lg">
+          <a href="#order" class="bg-[#b85b7a] text-white px-6 py-3 rounded-full font-medium hover:bg-[#a64c6a]">
+            Order Now
+          </a>
+          <a href="#menu" class="border border-[#b85b7a] text-[#b85b7a] px-6 py-3 rounded-full font-medium hover:bg-[#fce8ee]">
+            This Week's Menu
+          </a>
+        </div>
+      </section>
+
+      <!-- Weekly Featured Cookies -->
+      <section id="menu" class="text-center pb-20">
+        <h2 class="text-3xl sm:text-4xl font-semibold mb-12">Weekly Featured Cookies</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-12 gap-x-6 max-w-6xl mx-auto px-4">
+          <div><img src="/images/cookie1.png" class="rounded-full w-28 mx-auto" /><p class="mt-4 text-sm font-medium">Chocolate Chip</p></div>
+          <div><img src="/images/cookie1.png" class="rounded-full w-28 mx-auto" /><p class="mt-4 text-sm font-medium">Red Velvet</p></div>
+          <div><img src="/images/cookie1.png" class="rounded-full w-28 mx-auto" /><p class="mt-4 text-sm font-medium">Oatmeal Raisin</p></div>
+          <div><img src="/images/cookie1.png" class="rounded-full w-28 mx-auto" /><p class="mt-4 text-sm font-medium">Snickerdoodle</p></div>
+          <div><img src="/images/cookie1.png" class="rounded-full w-28 mx-auto" /><p class="mt-4 text-sm font-medium">Peanut Butter</p></div>
+          <div><img src="/images/cookie1.png" class="rounded-full w-28 mx-auto" /><p class="mt-4 text-sm font-medium">Double Butter</p></div>
+          <div><img src="/images/cookie1.png" class="rounded-full w-28 mx-auto" /><p class="mt-4 text-sm font-medium">Double Chocolate</p></div>
+          <div><img src="/images/cookie1.png" class="rounded-full w-28 mx-auto" /><p class="mt-4 text-sm font-medium">Classic Chip</p></div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="bg-[#fdf6f7] py-20 text-center">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-[#9a3152] mb-4">About Mama Zaza</h2>
+      <p class="text-gray-700 max-w-xl mx-auto text-lg mb-6">Taste what love tastes like</p>
+
+      <div class="flex items-center justify-center gap-4 mt-4">
+        <span class="text-[#b85b7a] text-xl">❤</span>
+        <img src="/assets/rolling-pin.png" alt="Rolling Pin" class="w-16" />
+        <span class="text-[#b85b7a] text-xl">❤</span>
+      </div>
+
+      <p class="text-sm text-gray-500 mt-4">
+        Cookies crafted with care and tradition — always made fresh in Nairobi.
+      </p>
+    </section>
+
+  </body>
+</html>
