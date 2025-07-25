@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#b85b7a" />
 
   <!-- Open Graph Meta Tags for Social Sharing -->
-  <meta property="og:title" content="Mama Zaza's Cookies" />
+  <meta property="og:title" content="Mama Zaza's" />
   <meta property="og:description"
     content="Handmade cookies crafted with love from the heart of Nairobi. Discover seasonal flavors and bake-fresh magic!" />
   <meta property="og:image" content="https://sandyabdullahi.github.io/mama_zazas/images/preview.png" />
@@ -20,7 +20,7 @@
 
   <!-- Twitter Card Tags (Optional but Recommended) -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mama Zaza's Cookies" />
+  <meta name="twitter:title" content="Mama Zaza's" />
   <meta name="twitter:description" content="Get a taste of nostalgic joy. Nairobi's favorite handmade cookies!" />
   <meta name="twitter:image" content="https://sandyabdullahi.github.io/mama_zazas/images/preview.png" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -126,8 +126,10 @@
           class="font-medium flex flex-col p-4 mt-4 rounded-lg bg-[#fdf6f7] md:flex-row md:space-x-8 md:mt-0 md:p-0 md:bg-transparent">
           <li><a href="index.html" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">Home</a></li>
           <li><a href="about.html" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">About</a></li>
-          <li><a href="gallery.html" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">Gallery</a></li>
-          <li><a href="contact.html" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">Contact</a></li>
+          <li><a href="gallery.html" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">Gallery</a>
+          </li>
+          <li><a href="contact.html" class="block py-2 px-3 text-[#9a3152] hover:text-[#b85b7a] transition">Contact</a>
+          </li>
           <li>
             <a href="#call-now"
               class="block py-2 px-4 bg-[#b85b7a] text-white rounded-full text-sm font-semibold hover:bg-[#a64c6a] transition md:mt-0 md:inline-block">
@@ -138,15 +140,15 @@
       </div>
     </div>
   </nav>
-  
-  
+
+
   <!-- 🌊 Hero & Menu -->
   <div class="bg-watercolor bg-top bg-[length:auto_90vh] md:bg-contain md:h-auto mt-[80px]">
-    
-<!-- 🎉 Promo -->
-<div class="fixed top-[64px] left-0 w-full text-center py-2 bg-[#b85b7a]/90 text-white text-sm font-medium z-40">
-  🍪 FREE Delivery in Nairobi on orders over KSh 1500!
-</div>
+
+    <!-- 🎉 Promo -->
+    <div class="fixed top-[64px] left-0 w-full text-center py-2 bg-[#b85b7a]/90 text-white text-sm font-medium z-40">
+      🍪 FREE Delivery in Nairobi on orders over KSh 1500!
+    </div>
 
     <!-- 🖼️ Hero -->
     <section class="h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-6">
@@ -311,9 +313,8 @@
 
       <div class="relative">
         <!-- Carousel Container -->
-<div id="carouselTrack" 
-  class="flex overflow-x-auto scroll-smooth snap-x gap-6 px-4 py-4 scrollbar-hide"
-  style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+        <div id="carouselTrack" class="flex overflow-x-auto scroll-smooth snap-x gap-6 px-4 py-4 scrollbar-hide"
+          style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
 
 
           <!-- Card: Strawberry Bliss -->
@@ -517,25 +518,25 @@
       });
     });
 
- const track = document.getElementById("carouselTrack");
-  const prevBtn = document.getElementById("carouselPrev");
-  const nextBtn = document.getElementById("carouselNext");
+    const track = document.getElementById("carouselTrack");
+    const prevBtn = document.getElementById("carouselPrev");
+    const nextBtn = document.getElementById("carouselNext");
 
-  const scrollAmount = window.innerWidth < 640 ? 300 : 280; // More distance on mobile
+    const scrollAmount = window.innerWidth < 640 ? 300 : 280; // More distance on mobile
 
-  prevBtn.addEventListener("click", () => {
-    track.scrollBy({
-      left: -scrollAmount,
-      behavior: "smooth"
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth"
+      });
     });
-  });
 
-  nextBtn.addEventListener("click", () => {
-    track.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth"
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
     });
-  });
 
 
     // // 🍭 Optional autoplay every 5 seconds
